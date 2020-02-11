@@ -1,7 +1,7 @@
 from django.db import models
 
 class Category(models.Model):
-    ***Категории***
+    #Категории
     
     name = models.CharField("Категория", max_length=150)
     description = models.TextField("Описание")
@@ -16,7 +16,7 @@ class Category(models.Model):
 
 
 class Actor(models.Model):
-    ***Актеры и режиссеры***
+    #Актеры и режиссеры
     
     name = models.CharField("Имя", max_length=100)
     age = models.PositiveSmallIntegerField("Возраст", default=0)
@@ -31,7 +31,7 @@ class Actor(models.Model):
         verbose_name_plural = "Актеры и режиссеры"
 
 class Genre(models.Model):
-    ***Категории***
+    #Категории
     
     name = models.CharField("Жанр", max_length=150)
     description = models.TextField("Описание")
@@ -45,7 +45,7 @@ class Genre(models.Model):
         verbose_name_plural = "Жанры"
 
 class Movie(models.Model):
-    ***Фильмы***
+    #Фильмы
 
     title = models.CharField("", max_length=100)
     tagline = models.CharField("", max_length=100, default='')
