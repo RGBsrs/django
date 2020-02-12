@@ -1,10 +1,9 @@
+from datetime import date 
 from django.db import models
-from datetime import date
 
 
 class Category(models.Model):
-    # Категории
-
+    """ Категории  """
     name = models.CharField("Категория", max_length=150)
     description = models.TextField("Описание")
     url = models.SlugField(max_length=160, unique=True)
@@ -18,12 +17,11 @@ class Category(models.Model):
 
 
 class Actor(models.Model):
-    # Актеры и режиссеры
-
+    """ Актеры и режиссеры """
     name = models.CharField("Имя", max_length=100)
     age = models.PositiveSmallIntegerField("Возраст", default=0)
     description = models.TextField("Описание")
-    image = models.ImageField("Изображение", upload_to="actors/s")
+    image = models.ImageField("Изображение", upload_to="actors/")
 
     def __str__(self):
         return self.name
@@ -34,8 +32,7 @@ class Actor(models.Model):
 
 
 class Genre(models.Model):
-    # Категории
-
+    """ Категории """
     name = models.CharField("Жанр", max_length=150)
     description = models.TextField("Описание")
     url = models.SlugField(max_length=160, unique=True)
@@ -49,8 +46,7 @@ class Genre(models.Model):
 
 
 class Movie(models.Model):
-    # Фильмы
-
+    """ Фильмы """
     title = models.CharField("Название", max_length=100)
     tagline = models.CharField("Слоган", max_length=100, default='')
     description = models.TextField("Описание")
@@ -86,8 +82,7 @@ class Movie(models.Model):
 
 
 class MovieShots(models.Model):
-    # Кадры из фильма
-
+    """ MovieShots  """
     title = models.CharField("Заголовок", max_length=100)
     description = models.TextField("Описание")
     image = models.ImageField("Изображение", upload_to="movie_shots/")
@@ -102,7 +97,7 @@ class MovieShots(models.Model):
 
 
 class RatingStar(models.Model):
-
+    """ RatingStar  """
     value = models.PositiveSmallIntegerField("Значение", default=0)
 
     def __str__(self):
@@ -114,7 +109,7 @@ class RatingStar(models.Model):
 
 
 class Rating(models.Model):
-
+    """Rating"""
     ip = models.CharField("IP", max_length=15)
     star = models.ForeignKey(RatingStar, on_delete=models.CASCADE,
                              verbose_name="звезда")
@@ -130,7 +125,7 @@ class Rating(models.Model):
 
 
 class Reviews(models.Model):
-
+    """Reviews"""
     email = models.EmailField()
     name = models.CharField("Имя", max_length=100)
     text = models.TextField("Сообщение", max_length=5000)
