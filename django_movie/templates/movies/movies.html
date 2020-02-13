@@ -291,7 +291,7 @@
             <!-- product right -->
             <div class="left-ads-display col-lg-9">
               <div class="row">
-                {%for movie in movie_list%}
+                {% for movie in movie_list %}
                 <div class="col-md-4 product-men">
                   <div
                     class="product-shoe-info editContent text-center mt-lg-4"
@@ -305,7 +305,7 @@
                     </div>
                     <div class="item-info-product">
                       <h4 class="">
-                        <a href="{% movie.get_absolute_url %}" class="editContent">{{ movie.title }}</a>
+                        <a href="{{ movie.get_absolute_url }}" class="editContent">{{ movie.title }}</a>
                       </h4>
 
                       <div class="product_price">
