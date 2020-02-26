@@ -1,12 +1,5 @@
-  {% extends 'movies/base.html' %}
-      <section
-        class="ab-info-main py-md-5 py-4 editContent"
-        style="padding-left: 3rem; padding-right: 3rem;"
-      >
-        <div class="container-fluid py-md-3">
-          <div class="row">
-
-{% block content %}
+{% extends 'movies/base.html' %}
+{% block movie %}
             <!-- product right -->
             <div class="left-ads-display col-lg-9">
               <div class="row">
@@ -78,7 +71,5 @@
                             <a href="moviesingle.html" class="btn" >Now</a>
                         </div>-->
             </div>
-          </div>
-        </div>
-      </section>
-{% endblock content %}
+
+{% endblock movie %}
