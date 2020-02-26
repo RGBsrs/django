@@ -39,3 +39,4 @@ venv.bak/
 /site
 
 .vscode
+.vscode/settings.json
