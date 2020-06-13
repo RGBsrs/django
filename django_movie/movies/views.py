@@ -37,6 +37,6 @@ class AddReview(View):
 
 class ActorView(DetailView):
     """ Information about actor """
-    model = Acrtor
+    model = Actor
     template_name = 'movies/actor.html'
     slug_field = "name"
